@@ -8,21 +8,17 @@
 // reversed();
 function reversed() {
   var string = prompt('How are you doing today?');
-  var splitted = string.split(/\s+/);
+  var splitted = string.split(' ');
   console.log(splitted.length);
-      for(var i=0; i<splitted.length; i++) {
-        var word = splitted[i].split();
-        console.log(word[0].length);
-       if(word[0].length >= 5){
-         word[0].reverse;
-
-      }
+  for(var i=0; i<splitted.length; i++) {
+    var word = splitted[i].split('');
+    console.log(word.length);
+    if(word.length >= 5){
+      splitted[i] = word.reverse().join('');
     }
-
-
-    // console.log(splitted);
-
   }
+  console.log(splitted.join(' '));
+}
 reversed();
 
 

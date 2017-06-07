@@ -5,32 +5,32 @@
 //If the user's guess is too high or too low, the computer notifies them of that
 //Otherwise, if the user guesses the secret number correctly, the computer displays a winning message and the game is over.
 //Computer picks random number 1-100
-var equation = 0;
+
 function numberPick(){
-  equation = (Math.floor((Math.random() * 100) + 1));
+  var equation = (Math.floor((Math.random() * 100) + 1));
   return equation;
 }
-numberPick();
 //User picks number and compares to computer number
 function userGuess(){
   var guess = prompt("Guess the number");
+  if (!guess) { return; }
   var attempt = 1;
-  while (guess != equation && attempt < 7){
-    if (guess > equation){
-    guess = prompt('Guess lower!');
-    attempt++;
+  var equation = numberPick();
+  console.log(equation);
+  while (attempt < 7){
+    if (+guess > equation){
+      guess = prompt('Guess lower!');
     }
-    else if (guess < equation){
+    else if (+guess < equation){
       guess = prompt('Guess higher!');
-      attempt++;
     }
+    else if(+guess === equation){
+      alert('You Win!');
+      return;
+    }
+    attempt++;
   }
-  if(guess === equation && attempt < 7){
-    alert("You win!");
-  }
-  else if(guess != equation && attempt === 7){
-    alert('You lose!');
-  }
+  alert('You lose!');
 }
 userGuess();
 
