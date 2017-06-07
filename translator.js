@@ -6,11 +6,9 @@
 function translate(language) {
   if (language === "es") {
   return "Hola, mundo!";
-}
-  else if(language === "fr") {
+  } else if (language === "fr") {
     return "Bonjour le monde";
-  }
-  else {
+  } else {
     return "Hello, World";
   }
 

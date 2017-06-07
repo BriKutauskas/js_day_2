@@ -25,5 +25,4 @@ function plural(noun, number){
     return noun;
   }
 }
-
 plural("cow", 5);

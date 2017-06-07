@@ -7,16 +7,13 @@
 function iterate() {
   var num=0;
   do{
-    num++
+    num++;
     if(num % 2 === 1) {
       alert (num + " is odd");
-      }
+    }
     else {
       alert (num + " is even");
-      }
     }
-  while (num < 15);
-    }
-
-
+  } while (num < 15);
+}
 iterate();
